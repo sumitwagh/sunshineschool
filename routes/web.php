@@ -21,4 +21,4 @@ Route::resource('/students', 'StudentController');
 
 Route::post('/', 'StudentController@search');
 
-Route::resource('/', 'FeesController');
+Route::resource('/fees', 'FeesController');

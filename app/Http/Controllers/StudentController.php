@@ -50,8 +50,7 @@ class StudentController extends Controller
             'gender' => 'required',
             'address' => 'required|min:5',
             'mobile'  => 'required|numeric|digits:10',
-            'std'     => 'required'
- 
+            'std'     => 'required' 
         ]);
 
         Student::create($validated);
@@ -69,7 +68,21 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('students.show', compact('student'));
+
+        if ($student->std == '1st') {
+            $fees = 7000;
+        }
+        elseif ($student->std == 'Jr.Kg') {
+             $fees = 5000;
+
+        } elseif ($student->std == 'Sr.Kg') {
+             $fees = 6000;
+
+        } else {
+             $fees = 4000;
+        }   
+
+        return view('students.show', compact('student', 'fees'));
     }
 
     /**
@@ -136,9 +149,8 @@ class StudentController extends Controller
             ->where('first_name', 'LIKE', "%{$name}%")
             ->orWhere('last_name', 'LIKE', "%{$name}%")
             ->get();
+    
+        return view('students.search', compact('students', 'name'));
 
-            
-            return view('students.search', compact('students', 'name'));
-
-        }
+     }
 }

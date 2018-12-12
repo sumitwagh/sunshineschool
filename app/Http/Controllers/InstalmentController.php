@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Fees;
+use App\Instalment;
 use Illuminate\Http\Request;
 
-class FeesController extends Controller
+class InstalmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,22 +41,21 @@ class FeesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Fees  $fees
+     * @param  \App\Instalment  $instalment
      * @return \Illuminate\Http\Response
      */
-    public function show(Fees $fees)
+    public function show(Instalment $instalment)
     {
-
-        return view('students.edit', compact('student'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Fees  $fees
+     * @param  \App\Instalment  $instalment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fees $fees)
+    public function edit(Instalment $instalment)
     {
         //
     }
@@ -65,10 +64,10 @@ class FeesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Fees  $fees
+     * @param  \App\Instalment  $instalment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fees $fees)
+    public function update(Request $request, Instalment $instalment)
     {
         //
     }
@@ -76,10 +75,10 @@ class FeesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Fees  $fees
+     * @param  \App\Instalment  $instalment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fees $fees)
+    public function destroy(Instalment $instalment)
     {
         //
     }
